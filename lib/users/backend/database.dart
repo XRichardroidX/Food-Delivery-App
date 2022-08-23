@@ -7,7 +7,6 @@ import 'package:food_store/authentication/login.dart';
 import 'package:food_store/users/screens/profile/orders.dart';
 import 'package:image_picker/image_picker.dart';
 import '../../admin/backend/auth.dart';
-import '../../authentication/register.dart';
 
 class Database{
      Database(FirebaseFirestore DatabaseInstance, BuildContext context);
@@ -96,7 +95,7 @@ class Database{
                          {
                            "UserName": data['Name'],
                            "UserId": FirebaseAuth.instance.currentUser!.uid,
-                           "ProductId": ProductName,
+                           "ProductId": "${FirebaseAuth.instance.currentUser!.uid}-$ProductName",
                            "Phone Number": data['PhoneNumber'],
                            "Email": data['Email'],
                            "ProductName": ProductName,

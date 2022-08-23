@@ -6,7 +6,6 @@ import 'package:food_store/users/screens/home/user_home.dart';
 import 'package:food_store/users/screens/profile/user_profile.dart';
 import 'package:food_store/users/screens/shop/main_store.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import '../admin/main_admin.dart';
 
 class MainUsers extends StatefulWidget {
@@ -24,7 +23,7 @@ class _MainUsersState extends State<MainUsers> {
     UserHelp(),
   ];
 
-  int page = 3;
+  int page = 0;
   void button (int index){
     setState(() {
       page = index;

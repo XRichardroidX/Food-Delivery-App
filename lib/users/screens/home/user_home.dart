@@ -1886,7 +1886,7 @@ class _UserHomeScreenState extends State<UserHomeScreen> {
             ],
            ),
           ),
-          Container(width: MediaQuery.of(context).size.width,margin: EdgeInsets.symmetric(vertical: 90.0),padding: EdgeInsets.all(2.0),child: Text("All Categories", style: GoogleFonts.nanumGothic(fontSize: 12, color: Colors.white),textAlign: TextAlign.center,), decoration: BoxDecoration(borderRadius: BorderRadius.circular(0.0), color: Colors.black,),),
+          Container(width: MediaQuery.of(context).size.width,margin: EdgeInsets.symmetric(vertical: 90.0),padding: EdgeInsets.all(2.0),child: Text("All Categories", style: GoogleFonts.nanumGothic(fontSize: 12, color: Colors.white),), decoration: BoxDecoration(borderRadius: BorderRadius.circular(0.0), color: Colors.black,),),
           Padding(
             padding: const EdgeInsets.fromLTRB(0.0, 97.0, 0.0, 435.0),
             child: ListView(

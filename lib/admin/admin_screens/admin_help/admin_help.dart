@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:food_store/admin/admin_screens/admin_help/admin_help_details.dart';
 import 'package:intl/intl.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
@@ -80,6 +81,9 @@ class Complaints extends StatelessWidget {
               return InkWell(
                 onLongPress: (){
                   DeleteProductFunction(MailData['Id'], context);
+                },
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => HelpDetails(Id: MailData['Id'], Time: readTimestamp(Time),)));
                 },
                 child: Card(
                   margin: EdgeInsets.all(10.0),
