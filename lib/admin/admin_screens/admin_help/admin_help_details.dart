@@ -53,7 +53,7 @@ class HelpDetails extends StatelessWidget {
                   Container(
                     margin: EdgeInsets.all(10.0),
                     padding: EdgeInsets.all(10.0),
-                    child: Text("${data!['Title']}"),
+                    child: Text("${data!['Message']}"),
                   ),
                   Container(
                     padding: EdgeInsets.all(2.0),

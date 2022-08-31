@@ -4,6 +4,8 @@ import 'package:food_store/admin/backend/auth.dart';
 import 'package:food_store/authentication/login.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../users/screens/profile/orders.dart';
+
 class RegistrationPage extends StatefulWidget {
   const RegistrationPage({Key? key}) : super(key: key);
 
@@ -124,8 +126,9 @@ var PasswordIcon = Icons.remove_red_eye;
                  height: 45.0,
                  minWidth: 200.0,
                  color: Colors.green,
-                 onPressed: (){
-                   getUsersDetails();
+                 onPressed: () async {
+                   await getUsersDetails();
+                   Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => OpenOrders()));
                  },
                  child: Text("Register"),
                  shape: RoundedRectangleBorder(

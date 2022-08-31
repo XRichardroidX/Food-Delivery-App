@@ -32,7 +32,6 @@ class Complaints extends StatelessWidget {
         time = (diff.inDays / 7).floor().toString() + ' WEEKS AGO';
       }
     }
-    print(time);
     return time;
   }
 
@@ -76,7 +75,6 @@ class Complaints extends StatelessWidget {
               DocumentSnapshot MailData = snapshot.data!.docs[index];
               var Time = MailData["TimeStamp"];
               Time = Time.millisecondsSinceEpoch;
-             // int Date = DateTime.fromMicrosecondsSinceEpoch(Time) as int;
 
               return InkWell(
                 onLongPress: (){

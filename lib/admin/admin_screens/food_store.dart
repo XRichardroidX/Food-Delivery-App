@@ -2,11 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:food_store/admin/admin_screens/admin_product/mushroom.dart';
 import 'package:food_store/admin/admin_screens/admin_product/pizza.dart';
-import 'package:food_store/admin/admin_screens/test.dart';
-import 'package:food_store/users/screens/shop/products/salad.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-import '../../users/screens/shop/products/mushroom.dart';
 import 'admin_product/salad.dart';
 
 class FoodStore extends StatefulWidget {
@@ -424,10 +420,7 @@ class _FoodStoreState extends State<FoodStore> {
                   Expanded(child: Text(''), flex: 2,),
                   InkWell(
                     onTap: (){
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => const Test()),
-                      );
+                      //Todo
                     },
                     child: Card(
                       elevation: 10,

@@ -101,6 +101,7 @@ class Database{
                            "ProductName": ProductName,
                            "Price": ProductPrice,
                            "Chart": Counter,
+                           "TimeStamp": DateTime.now(),
                          }
                      );
                    }

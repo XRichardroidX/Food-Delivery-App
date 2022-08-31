@@ -1,4 +1,8 @@
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:food_store/admin/admin_screens/admin_product/pizza.dart';
+import 'package:food_store/users/screens/home/fetch_data_class.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 
@@ -16,11 +20,6 @@ class _UserHomeScreenState extends State<UserHomeScreen> {
   var TextColor = Colors.white;
   var ActiveColor = Colors.green;
   var BackgroundColor = Colors.black;
-  String ClickedProductA = "";
-  String ClickedProductB = "";
-  String ClickedProductC = "";
-  String ClickedProductD = "";
-  String ClickedProductE = "";
 
   var a, b, c, d, e, f, g, h, i, j, k, l;
 
@@ -60,11 +59,6 @@ class _UserHomeScreenState extends State<UserHomeScreen> {
         j = BackgroundColor;
         k = BackgroundColor;
         l = BackgroundColor;
-        ClickedProductA = "Salad";
-        ClickedProductB = "";
-        ClickedProductC = "";
-        ClickedProductD = "";
-        ClickedProductE = "";
 
       });
     }
@@ -82,11 +76,6 @@ class _UserHomeScreenState extends State<UserHomeScreen> {
         j = BackgroundColor;
         k = BackgroundColor;
         l = BackgroundColor;
-        ClickedProductA = "";
-        ClickedProductB = "Pizza";
-        ClickedProductC = "";
-        ClickedProductD = "";
-        ClickedProductE = "";
       });
     }
     if(isClicked == "c"){
@@ -103,11 +92,6 @@ class _UserHomeScreenState extends State<UserHomeScreen> {
         j = BackgroundColor;
         k = BackgroundColor;
         l = BackgroundColor;
-        ClickedProductA = "";
-        ClickedProductB = "";
-        ClickedProductC = "Mushroom";
-        ClickedProductD = "";
-        ClickedProductE = "";
       });
     }
     if(isClicked == "d"){
@@ -124,11 +108,6 @@ class _UserHomeScreenState extends State<UserHomeScreen> {
         j = BackgroundColor;
         k = BackgroundColor;
         l = BackgroundColor;
-        ClickedProductA = "";
-        ClickedProductB = "";
-        ClickedProductC = "";
-        ClickedProductD = "Beef Suya";
-        ClickedProductE = "";
       });
     }
     if(isClicked == "e"){
@@ -145,11 +124,6 @@ class _UserHomeScreenState extends State<UserHomeScreen> {
         j = BackgroundColor;
         k = BackgroundColor;
         l = BackgroundColor;
-        ClickedProductA = "";
-        ClickedProductB = "";
-        ClickedProductC = "";
-        ClickedProductD = "";
-        ClickedProductE = "Snail";
       });
     }
     if(isClicked == "f"){
@@ -269,1588 +243,122 @@ class _UserHomeScreenState extends State<UserHomeScreen> {
 
   var shadowColor = Colors.green;
 
-  display(){
-    if(Click == 'a'){
-      return Container(
-        padding: EdgeInsets.fromLTRB(10.0, 210.0, 10.0, 0.0),
-        child: ListView(
-          physics: BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
-          scrollDirection: Axis.vertical,
-        children: [
-          Column(
-            children: [
-              Row(
-                children: [
-                  Card(
-                    elevation: 10,
-                    shadowColor: shadowColor,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10)
-                    ),
-                    child: Container(
-                      width: 105,
-                      height: 105,
-                      padding: EdgeInsets.all(0.0),
-                      decoration: BoxDecoration(image: DecorationImage(image: AssetImage("images/salad.png",),fit: BoxFit.cover,), borderRadius: BorderRadius.circular(10)),
-                      child: Center(
-                        child: Container(
-                          margin: EdgeInsets.fromLTRB(0.8, 82.0, 0.8, 0.0),
-                          padding: EdgeInsets.all(2.0),
-                          decoration: BoxDecoration(
-                            color: b,
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                          child: Text(
-                            "Salad",
-                            style: GoogleFonts.raleway(color: TextColor, fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Expanded(child: Text(''), flex: 2,),
-                  Card(
-                    elevation: 10,
-                    shadowColor: shadowColor,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10)
-                    ),
-                    child: Container(
-                      width: 105,
-                      height: 105,
-                      padding: EdgeInsets.all(0.0),
-                      decoration: BoxDecoration(image: DecorationImage(image: AssetImage("images/salad.png",),fit: BoxFit.cover,), borderRadius: BorderRadius.circular(10)),
-                      child: Center(
-                        child: Container(
-                          margin: EdgeInsets.fromLTRB(0.8, 82.0, 0.8, 0.0),
-                          padding: EdgeInsets.all(2.0),
-                          decoration: BoxDecoration(
-                            color: b,
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                          child: Text(
-                            "Salad",
-                            style: GoogleFonts.raleway(color: TextColor, fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Expanded(child: Text(''), flex: 2,),
-                  Card(
-                    elevation: 10,
-                    shadowColor: shadowColor,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10)
-                    ),
-                    child: Container(
-                      width: 105,
-                      height: 105,
-                      padding: EdgeInsets.all(0.0),
-                      decoration: BoxDecoration(image: DecorationImage(image: AssetImage("images/salad.png",),fit: BoxFit.cover,), borderRadius: BorderRadius.circular(10)),
-                      child: Center(
-                        child: Container(
-                          margin: EdgeInsets.fromLTRB(0.8, 82.0, 0.8, 0.0),
-                          padding: EdgeInsets.all(2.0),
-                          decoration: BoxDecoration(
-                            color: b,
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                          child: Text(
-                            "Salad",
-                            style: GoogleFonts.raleway(color: TextColor, fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              Row(
-                children: [
-                  Card(
-                    elevation: 10,
-                    shadowColor: shadowColor,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10)
-                    ),
-                    child: Container(
-                      width: 105,
-                      height: 105,
-                      padding: EdgeInsets.all(0.0),
-                      decoration: BoxDecoration(image: DecorationImage(image: AssetImage("images/salad.png",),fit: BoxFit.cover,), borderRadius: BorderRadius.circular(10)),
-                      child: Center(
-                        child: Container(
-                          margin: EdgeInsets.fromLTRB(0.8, 82.0, 0.8, 0.0),
-                          padding: EdgeInsets.all(2.0),
-                          decoration: BoxDecoration(
-                            color: b,
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                          child: Text(
-                            "Salad",
-                            style: GoogleFonts.raleway(color: TextColor, fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Expanded(child: Text(''), flex: 2,),
-                  Card(
-                    elevation: 10,
-                    shadowColor: shadowColor,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10)
-                    ),
-                    child: Container(
-                      width: 105,
-                      height: 105,
-                      padding: EdgeInsets.all(0.0),
-                      decoration: BoxDecoration(image: DecorationImage(image: AssetImage("images/salad.png",),fit: BoxFit.cover,), borderRadius: BorderRadius.circular(10)),
-                      child: Center(
-                        child: Container(
-                          margin: EdgeInsets.fromLTRB(0.8, 82.0, 0.8, 0.0),
-                          padding: EdgeInsets.all(2.0),
-                          decoration: BoxDecoration(
-                            color: b,
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                          child: Text(
-                            "Salad",
-                            style: GoogleFonts.raleway(color: TextColor, fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Expanded(child: Text(''), flex: 2,),
-                  Card(
-                    elevation: 10,
-                    shadowColor: shadowColor,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10)
-                    ),
-                    child: Container(
-                      width: 105,
-                      height: 105,
-                      padding: EdgeInsets.all(0.0),
-                      decoration: BoxDecoration(image: DecorationImage(image: AssetImage("images/salad.png",),fit: BoxFit.cover,), borderRadius: BorderRadius.circular(10)),
-                      child: Center(
-                        child: Container(
-                          margin: EdgeInsets.fromLTRB(0.8, 82.0, 0.8, 0.0),
-                          padding: EdgeInsets.all(2.0),
-                          decoration: BoxDecoration(
-                            color: b,
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                          child: Text(
-                            "Salad",
-                            style: GoogleFonts.raleway(color: TextColor, fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              Row(
-                children: [
-                  Card(
-                    elevation: 10,
-                    shadowColor: shadowColor,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10)
-                    ),
-                    child: Container(
-                      width: 105,
-                      height: 105,
-                      padding: EdgeInsets.all(0.0),
-                      decoration: BoxDecoration(image: DecorationImage(image: AssetImage("images/salad.png",),fit: BoxFit.cover,), borderRadius: BorderRadius.circular(10)),
-                      child: Center(
-                        child: Container(
-                          margin: EdgeInsets.fromLTRB(0.8, 82.0, 0.8, 0.0),
-                          padding: EdgeInsets.all(2.0),
-                          decoration: BoxDecoration(
-                            color: b,
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                          child: Text(
-                            "Salad",
-                            style: GoogleFonts.raleway(color: TextColor, fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Expanded(child: Text(''), flex: 2,),
-                  Card(
-                    elevation: 10,
-                    shadowColor: shadowColor,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10)
-                    ),
-                    child: Container(
-                      width: 105,
-                      height: 105,
-                      padding: EdgeInsets.all(0.0),
-                      decoration: BoxDecoration(image: DecorationImage(image: AssetImage("images/salad.png",),fit: BoxFit.cover,), borderRadius: BorderRadius.circular(10)),
-                      child: Center(
-                        child: Container(
-                          margin: EdgeInsets.fromLTRB(0.8, 82.0, 0.8, 0.0),
-                          padding: EdgeInsets.all(2.0),
-                          decoration: BoxDecoration(
-                            color: b,
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                          child: Text(
-                            "Salad",
-                            style: GoogleFonts.raleway(color: TextColor, fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Expanded(child: Text(''), flex: 2,),
-                  Card(
-                    elevation: 10,
-                    shadowColor: shadowColor,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10)
-                    ),
-                    child: Container(
-                      width: 105,
-                      height: 105,
-                      padding: EdgeInsets.all(0.0),
-                      decoration: BoxDecoration(image: DecorationImage(image: AssetImage("images/salad.png",),fit: BoxFit.cover,), borderRadius: BorderRadius.circular(10)),
-                      child: Center(
-                        child: Container(
-                          margin: EdgeInsets.fromLTRB(0.8, 82.0, 0.8, 0.0),
-                          padding: EdgeInsets.all(2.0),
-                          decoration: BoxDecoration(
-                            color: b,
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                          child: Text(
-                            "Salad",
-                            style: GoogleFonts.raleway(color: TextColor, fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              Row(
-                children: [
-                  Card(
-                    elevation: 10,
-                    shadowColor: shadowColor,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10)
-                    ),
-                    child: Container(
-                      width: 105,
-                      height: 105,
-                      padding: EdgeInsets.all(0.0),
-                      decoration: BoxDecoration(image: DecorationImage(image: AssetImage("images/salad.png",),fit: BoxFit.cover,), borderRadius: BorderRadius.circular(10)),
-                      child: Center(
-                        child: Container(
-                          margin: EdgeInsets.fromLTRB(0.8, 82.0, 0.8, 0.0),
-                          padding: EdgeInsets.all(2.0),
-                          decoration: BoxDecoration(
-                            color: b,
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                          child: Text(
-                            "Salad",
-                            style: GoogleFonts.raleway(color: TextColor, fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Expanded(child: Text(''), flex: 2,),
-                  Card(
-                    elevation: 10,
-                    shadowColor: shadowColor,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10)
-                    ),
-                    child: Container(
-                      width: 105,
-                      height: 105,
-                      padding: EdgeInsets.all(0.0),
-                      decoration: BoxDecoration(image: DecorationImage(image: AssetImage("images/salad.png",),fit: BoxFit.cover,), borderRadius: BorderRadius.circular(10)),
-                      child: Center(
-                        child: Container(
-                          margin: EdgeInsets.fromLTRB(0.8, 82.0, 0.8, 0.0),
-                          padding: EdgeInsets.all(2.0),
-                          decoration: BoxDecoration(
-                            color: b,
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                          child: Text(
-                            "Salad",
-                            style: GoogleFonts.raleway(color: TextColor, fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Expanded(child: Text(''), flex: 2,),
-                  Card(
-                    elevation: 10,
-                    shadowColor: shadowColor,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10)
-                    ),
-                    child: Container(
-                      width: 105,
-                      height: 105,
-                      padding: EdgeInsets.all(0.0),
-                      decoration: BoxDecoration(image: DecorationImage(image: AssetImage("images/salad.png",),fit: BoxFit.cover,), borderRadius: BorderRadius.circular(10)),
-                      child: Center(
-                        child: Container(
-                          margin: EdgeInsets.fromLTRB(0.8, 82.0, 0.8, 0.0),
-                          padding: EdgeInsets.all(2.0),
-                          decoration: BoxDecoration(
-                            color: b,
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                          child: Text(
-                            "Salad",
-                            style: GoogleFonts.raleway(color: TextColor, fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              Row(
-                children: [
-                  Card(
-                    elevation: 10,
-                    shadowColor: shadowColor,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10)
-                    ),
-                    child: Container(
-                      width: 105,
-                      height: 105,
-                      padding: EdgeInsets.all(0.0),
-                      decoration: BoxDecoration(image: DecorationImage(image: AssetImage("images/salad.png",),fit: BoxFit.cover,), borderRadius: BorderRadius.circular(10)),
-                      child: Center(
-                        child: Container(
-                          margin: EdgeInsets.fromLTRB(0.8, 82.0, 0.8, 0.0),
-                          padding: EdgeInsets.all(2.0),
-                          decoration: BoxDecoration(
-                            color: b,
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                          child: Text(
-                            "Salad",
-                            style: GoogleFonts.raleway(color: TextColor, fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Expanded(child: Text(''), flex: 2,),
-                  Card(
-                    elevation: 10,
-                    shadowColor: shadowColor,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10)
-                    ),
-                    child: Container(
-                      width: 105,
-                      height: 105,
-                      padding: EdgeInsets.all(0.0),
-                      decoration: BoxDecoration(image: DecorationImage(image: AssetImage("images/salad.png",),fit: BoxFit.cover,), borderRadius: BorderRadius.circular(10)),
-                      child: Center(
-                        child: Container(
-                          margin: EdgeInsets.fromLTRB(0.8, 82.0, 0.8, 0.0),
-                          padding: EdgeInsets.all(2.0),
-                          decoration: BoxDecoration(
-                            color: b,
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                          child: Text(
-                            "Salad",
-                            style: GoogleFonts.raleway(color: TextColor, fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Expanded(child: Text(''), flex: 2,),
-                  Card(
-                    elevation: 10,
-                    shadowColor: shadowColor,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10)
-                    ),
-                    child: Container(
-                      width: 105,
-                      height: 105,
-                      padding: EdgeInsets.all(0.0),
-                      decoration: BoxDecoration(image: DecorationImage(image: AssetImage("images/salad.png",),fit: BoxFit.cover,), borderRadius: BorderRadius.circular(10)),
-                      child: Center(
-                        child: Container(
-                          margin: EdgeInsets.fromLTRB(0.8, 82.0, 0.8, 0.0),
-                          padding: EdgeInsets.all(2.0),
-                          decoration: BoxDecoration(
-                            color: b,
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                          child: Text(
-                            "Salad",
-                            style: GoogleFonts.raleway(color: TextColor, fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              Row(
-                children: [
-                  Card(
-                    elevation: 10,
-                    shadowColor: shadowColor,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10)
-                    ),
-                    child: Container(
-                      width: 105,
-                      height: 105,
-                      padding: EdgeInsets.all(0.0),
-                      decoration: BoxDecoration(image: DecorationImage(image: AssetImage("images/salad.png",),fit: BoxFit.cover,), borderRadius: BorderRadius.circular(10)),
-                      child: Center(
-                        child: Container(
-                          margin: EdgeInsets.fromLTRB(0.8, 82.0, 0.8, 0.0),
-                          padding: EdgeInsets.all(2.0),
-                          decoration: BoxDecoration(
-                            color: b,
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                          child: Text(
-                            "Salad",
-                            style: GoogleFonts.raleway(color: TextColor, fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Expanded(child: Text(''), flex: 2,),
-                  Card(
-                    elevation: 10,
-                    shadowColor: shadowColor,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10)
-                    ),
-                    child: Container(
-                      width: 105,
-                      height: 105,
-                      padding: EdgeInsets.all(0.0),
-                      decoration: BoxDecoration(image: DecorationImage(image: AssetImage("images/salad.png",),fit: BoxFit.cover,), borderRadius: BorderRadius.circular(10)),
-                      child: Center(
-                        child: Container(
-                          margin: EdgeInsets.fromLTRB(0.8, 82.0, 0.8, 0.0),
-                          padding: EdgeInsets.all(2.0),
-                          decoration: BoxDecoration(
-                            color: b,
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                          child: Text(
-                            "Salad",
-                            style: GoogleFonts.raleway(color: TextColor, fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Expanded(child: Text(''), flex: 2,),
-                  Card(
-                    elevation: 10,
-                    shadowColor: shadowColor,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10)
-                    ),
-                    child: Container(
-                      width: 105,
-                      height: 105,
-                      padding: EdgeInsets.all(0.0),
-                      decoration: BoxDecoration(image: DecorationImage(image: AssetImage("images/salad.png",),fit: BoxFit.cover,), borderRadius: BorderRadius.circular(10)),
-                      child: Center(
-                        child: Container(
-                          margin: EdgeInsets.fromLTRB(0.8, 82.0, 0.8, 0.0),
-                          padding: EdgeInsets.all(2.0),
-                          decoration: BoxDecoration(
-                            color: b,
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                          child: Text(
-                            "Salad",
-                            style: GoogleFonts.raleway(color: TextColor, fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ],
-          )
-        ],
-    ),
-      );
-    }
-    if(Click == 'b' || Click == 'd' || Click == 'e' || Click == 'f' || Click == 'g' || Click == 'h' || Click == 'i' || Click == 'j' || Click == 'k' || Click == 'l'){
-      return Container(
-        padding: EdgeInsets.fromLTRB(10.0, 210.0, 10.0, 0.0),
-        child: ListView(
-          physics: BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
-          scrollDirection: Axis.vertical,
+
+  Ui(String Identification, String ProductCategory, String Picture, String Name, String Price, String Description){
+    return GestureDetector(
+      onTap: () {
+        ProductDetails().ShowFullContent(Identification, ProductCategory, context);
+      },
+      child: Card(
+        elevation: 10,
+        shadowColor: shadowColor,
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10)
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Column(
-              children: [
-                Row(
-                  children: [
-                    Card(
-                      elevation: 10,
-                      shadowColor: shadowColor,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10)
-                      ),
-                      child: Container(
-                        width: 105,
-                        height: 105,
-                        padding: EdgeInsets.all(0.0),
-                        decoration: BoxDecoration(image: DecorationImage(image: AssetImage("images/pizza.jpg",),fit: BoxFit.cover,), borderRadius: BorderRadius.circular(10)),
-                        child: Center(
-                          child: Container(
-                            margin: EdgeInsets.fromLTRB(0.8, 82.0, 0.8, 0.0),
-                            padding: EdgeInsets.all(2.0),
-                            decoration: BoxDecoration(
-                              color: a,
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                            child: Text(
-                              "Pizza",
-                              style: GoogleFonts.raleway(color: TextColor, fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Expanded(child: Text(''), flex: 2,),
-                    Card(
-                      elevation: 10,
-                      shadowColor: shadowColor,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10)
-                      ),
-                      child: Container(
-                        width: 105,
-                        height: 105,
-                        padding: EdgeInsets.all(0.0),
-                        decoration: BoxDecoration(image: DecorationImage(image: AssetImage("images/pizza.jpg",),fit: BoxFit.cover,), borderRadius: BorderRadius.circular(10)),
-                        child: Center(
-                          child: Container(
-                            margin: EdgeInsets.fromLTRB(0.8, 82.0, 0.8, 0.0),
-                            padding: EdgeInsets.all(2.0),
-                            decoration: BoxDecoration(
-                              color: a,
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                            child: Text(
-                              "Pizza",
-                              style: GoogleFonts.raleway(color: TextColor, fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Expanded(child: Text(''), flex: 2,),
-                    Card(
-                      elevation: 10,
-                      shadowColor: shadowColor,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10)
-                      ),
-                      child: Container(
-                        width: 105,
-                        height: 105,
-                        padding: EdgeInsets.all(0.0),
-                        decoration: BoxDecoration(image: DecorationImage(image: AssetImage("images/pizza.jpg",),fit: BoxFit.cover,), borderRadius: BorderRadius.circular(10)),
-                        child: Center(
-                          child: Container(
-                            margin: EdgeInsets.fromLTRB(0.8, 82.0, 0.8, 0.0),
-                            padding: EdgeInsets.all(2.0),
-                            decoration: BoxDecoration(
-                              color: a,
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                            child: Text(
-                              "Pizza",
-                              style: GoogleFonts.raleway(color: TextColor, fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
+            Container(
+              width: 105,
+              height: 105,
+              padding: EdgeInsets.all(0.0),
+              decoration: BoxDecoration(image: DecorationImage(
+                image: NetworkImage(Picture), fit: BoxFit.cover,),
+                  borderRadius: BorderRadius.circular(10)),
+              child: Center(
+                child: Container(
+                  margin: EdgeInsets.fromLTRB(0.8, 82.0, 0.8, 0.0),
+                  padding: EdgeInsets.all(2.0),
+                  decoration: BoxDecoration(
+                    color: Colors.green,
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                  child: Text(
+                    Price,
+                    style: GoogleFonts.raleway(
+                        color: Colors.white, fontWeight: FontWeight.bold),
+                  ),
                 ),
-                Row(
-                  children: [
-                    Card(
-                      elevation: 10,
-                      shadowColor: shadowColor,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10)
-                      ),
-                      child: Container(
-                        width: 105,
-                        height: 105,
-                        padding: EdgeInsets.all(0.0),
-                        decoration: BoxDecoration(image: DecorationImage(image: AssetImage("images/pizza.jpg",),fit: BoxFit.cover,), borderRadius: BorderRadius.circular(10)),
-                        child: Center(
-                          child: Container(
-                            margin: EdgeInsets.fromLTRB(0.8, 82.0, 0.8, 0.0),
-                            padding: EdgeInsets.all(2.0),
-                            decoration: BoxDecoration(
-                              color: a,
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                            child: Text(
-                              "Pizza",
-                              style: GoogleFonts.raleway(color: TextColor, fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Expanded(child: Text(''), flex: 2,),
-                    Card(
-                      elevation: 10,
-                      shadowColor: shadowColor,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10)
-                      ),
-                      child: Container(
-                        width: 105,
-                        height: 105,
-                        padding: EdgeInsets.all(0.0),
-                        decoration: BoxDecoration(image: DecorationImage(image: AssetImage("images/pizza.jpg",),fit: BoxFit.cover,), borderRadius: BorderRadius.circular(10)),
-                        child: Center(
-                          child: Container(
-                            margin: EdgeInsets.fromLTRB(0.8, 82.0, 0.8, 0.0),
-                            padding: EdgeInsets.all(2.0),
-                            decoration: BoxDecoration(
-                              color: a,
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                            child: Text(
-                              "Pizza",
-                              style: GoogleFonts.raleway(color: TextColor, fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Expanded(child: Text(''), flex: 2,),
-                    Card(
-                      elevation: 10,
-                      shadowColor: shadowColor,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10)
-                      ),
-                      child: Container(
-                        width: 105,
-                        height: 105,
-                        padding: EdgeInsets.all(0.0),
-                        decoration: BoxDecoration(image: DecorationImage(image: AssetImage("images/pizza.jpg",),fit: BoxFit.cover,), borderRadius: BorderRadius.circular(10)),
-                        child: Center(
-                          child: Container(
-                            margin: EdgeInsets.fromLTRB(0.8, 82.0, 0.8, 0.0),
-                            padding: EdgeInsets.all(2.0),
-                            decoration: BoxDecoration(
-                              color: a,
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                            child: Text(
-                              "Pizza",
-                              style: GoogleFonts.raleway(color: TextColor, fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                Row(
-                  children: [
-                    Card(
-                      elevation: 10,
-                      shadowColor: shadowColor,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10)
-                      ),
-                      child: Container(
-                        width: 105,
-                        height: 105,
-                        padding: EdgeInsets.all(0.0),
-                        decoration: BoxDecoration(image: DecorationImage(image: AssetImage("images/pizza.jpg",),fit: BoxFit.cover,), borderRadius: BorderRadius.circular(10)),
-                        child: Center(
-                          child: Container(
-                            margin: EdgeInsets.fromLTRB(0.8, 82.0, 0.8, 0.0),
-                            padding: EdgeInsets.all(2.0),
-                            decoration: BoxDecoration(
-                              color: a,
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                            child: Text(
-                              "Pizza",
-                              style: GoogleFonts.raleway(color: TextColor, fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Expanded(child: Text(''), flex: 2,),
-                    Card(
-                      elevation: 10,
-                      shadowColor: shadowColor,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10)
-                      ),
-                      child: Container(
-                        width: 105,
-                        height: 105,
-                        padding: EdgeInsets.all(0.0),
-                        decoration: BoxDecoration(image: DecorationImage(image: AssetImage("images/pizza.jpg",),fit: BoxFit.cover,), borderRadius: BorderRadius.circular(10)),
-                        child: Center(
-                          child: Container(
-                            margin: EdgeInsets.fromLTRB(0.8, 82.0, 0.8, 0.0),
-                            padding: EdgeInsets.all(2.0),
-                            decoration: BoxDecoration(
-                              color: a,
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                            child: Text(
-                              "Pizza",
-                              style: GoogleFonts.raleway(color: TextColor, fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Expanded(child: Text(''), flex: 2,),
-                    Card(
-                      elevation: 10,
-                      shadowColor: shadowColor,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10)
-                      ),
-                      child: Container(
-                        width: 105,
-                        height: 105,
-                        padding: EdgeInsets.all(0.0),
-                        decoration: BoxDecoration(image: DecorationImage(image: AssetImage("images/pizza.jpg",),fit: BoxFit.cover,), borderRadius: BorderRadius.circular(10)),
-                        child: Center(
-                          child: Container(
-                            margin: EdgeInsets.fromLTRB(0.8, 82.0, 0.8, 0.0),
-                            padding: EdgeInsets.all(2.0),
-                            decoration: BoxDecoration(
-                              color: a,
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                            child: Text(
-                              "Pizza",
-                              style: GoogleFonts.raleway(color: TextColor, fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                Row(
-                  children: [
-                    Card(
-                      elevation: 10,
-                      shadowColor: shadowColor,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10)
-                      ),
-                      child: Container(
-                        width: 105,
-                        height: 105,
-                        padding: EdgeInsets.all(0.0),
-                        decoration: BoxDecoration(image: DecorationImage(image: AssetImage("images/pizza.jpg",),fit: BoxFit.cover,), borderRadius: BorderRadius.circular(10)),
-                        child: Center(
-                          child: Container(
-                            margin: EdgeInsets.fromLTRB(0.8, 82.0, 0.8, 0.0),
-                            padding: EdgeInsets.all(2.0),
-                            decoration: BoxDecoration(
-                              color: a,
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                            child: Text(
-                              "Pizza",
-                              style: GoogleFonts.raleway(color: TextColor, fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Expanded(child: Text(''), flex: 2,),
-                    Card(
-                      elevation: 10,
-                      shadowColor: shadowColor,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10)
-                      ),
-                      child: Container(
-                        width: 105,
-                        height: 105,
-                        padding: EdgeInsets.all(0.0),
-                        decoration: BoxDecoration(image: DecorationImage(image: AssetImage("images/pizza.jpg",),fit: BoxFit.cover,), borderRadius: BorderRadius.circular(10)),
-                        child: Center(
-                          child: Container(
-                            margin: EdgeInsets.fromLTRB(0.8, 82.0, 0.8, 0.0),
-                            padding: EdgeInsets.all(2.0),
-                            decoration: BoxDecoration(
-                              color: a,
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                            child: Text(
-                              "Pizza",
-                              style: GoogleFonts.raleway(color: TextColor, fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Expanded(child: Text(''), flex: 2,),
-                    Card(
-                      elevation: 10,
-                      shadowColor: shadowColor,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10)
-                      ),
-                      child: Container(
-                        width: 105,
-                        height: 105,
-                        padding: EdgeInsets.all(0.0),
-                        decoration: BoxDecoration(image: DecorationImage(image: AssetImage("images/pizza.jpg",),fit: BoxFit.cover,), borderRadius: BorderRadius.circular(10)),
-                        child: Center(
-                          child: Container(
-                            margin: EdgeInsets.fromLTRB(0.8, 82.0, 0.8, 0.0),
-                            padding: EdgeInsets.all(2.0),
-                            decoration: BoxDecoration(
-                              color: a,
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                            child: Text(
-                              "Pizza",
-                              style: GoogleFonts.raleway(color: TextColor, fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                Row(
-                  children: [
-                    Card(
-                      elevation: 10,
-                      shadowColor: shadowColor,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10)
-                      ),
-                      child: Container(
-                        width: 105,
-                        height: 105,
-                        padding: EdgeInsets.all(0.0),
-                        decoration: BoxDecoration(image: DecorationImage(image: AssetImage("images/pizza.jpg",),fit: BoxFit.cover,), borderRadius: BorderRadius.circular(10)),
-                        child: Center(
-                          child: Container(
-                            margin: EdgeInsets.fromLTRB(0.8, 82.0, 0.8, 0.0),
-                            padding: EdgeInsets.all(2.0),
-                            decoration: BoxDecoration(
-                              color: a,
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                            child: Text(
-                              "Pizza",
-                              style: GoogleFonts.raleway(color: TextColor, fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Expanded(child: Text(''), flex: 2,),
-                    Card(
-                      elevation: 10,
-                      shadowColor: shadowColor,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10)
-                      ),
-                      child: Container(
-                        width: 105,
-                        height: 105,
-                        padding: EdgeInsets.all(0.0),
-                        decoration: BoxDecoration(image: DecorationImage(image: AssetImage("images/pizza.jpg",),fit: BoxFit.cover,), borderRadius: BorderRadius.circular(10)),
-                        child: Center(
-                          child: Container(
-                            margin: EdgeInsets.fromLTRB(0.8, 82.0, 0.8, 0.0),
-                            padding: EdgeInsets.all(2.0),
-                            decoration: BoxDecoration(
-                              color: a,
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                            child: Text(
-                              "Pizza",
-                              style: GoogleFonts.raleway(color: TextColor, fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Expanded(child: Text(''), flex: 2,),
-                    Card(
-                      elevation: 10,
-                      shadowColor: shadowColor,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10)
-                      ),
-                      child: Container(
-                        width: 105,
-                        height: 105,
-                        padding: EdgeInsets.all(0.0),
-                        decoration: BoxDecoration(image: DecorationImage(image: AssetImage("images/pizza.jpg",),fit: BoxFit.cover,), borderRadius: BorderRadius.circular(10)),
-                        child: Center(
-                          child: Container(
-                            margin: EdgeInsets.fromLTRB(0.8, 82.0, 0.8, 0.0),
-                            padding: EdgeInsets.all(2.0),
-                            decoration: BoxDecoration(
-                              color: a,
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                            child: Text(
-                              "Pizza",
-                              style: GoogleFonts.raleway(color: TextColor, fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                Row(
-                  children: [
-                    Card(
-                      elevation: 10,
-                      shadowColor: shadowColor,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10)
-                      ),
-                      child: Container(
-                        width: 105,
-                        height: 105,
-                        padding: EdgeInsets.all(0.0),
-                        decoration: BoxDecoration(image: DecorationImage(image: AssetImage("images/pizza.jpg",),fit: BoxFit.cover,), borderRadius: BorderRadius.circular(10)),
-                        child: Center(
-                          child: Container(
-                            margin: EdgeInsets.fromLTRB(0.8, 82.0, 0.8, 0.0),
-                            padding: EdgeInsets.all(2.0),
-                            decoration: BoxDecoration(
-                              color: a,
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                            child: Text(
-                              "Pizza",
-                              style: GoogleFonts.raleway(color: TextColor, fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Expanded(child: Text(''), flex: 2,),
-                    Card(
-                      elevation: 10,
-                      shadowColor: shadowColor,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10)
-                      ),
-                      child: Container(
-                        width: 105,
-                        height: 105,
-                        padding: EdgeInsets.all(0.0),
-                        decoration: BoxDecoration(image: DecorationImage(image: AssetImage("images/pizza.jpg",),fit: BoxFit.cover,), borderRadius: BorderRadius.circular(10)),
-                        child: Center(
-                          child: Container(
-                            margin: EdgeInsets.fromLTRB(0.8, 82.0, 0.8, 0.0),
-                            padding: EdgeInsets.all(2.0),
-                            decoration: BoxDecoration(
-                              color: a,
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                            child: Text(
-                              "Pizza",
-                              style: GoogleFonts.raleway(color: TextColor, fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Expanded(child: Text(''), flex: 2,),
-                    Card(
-                      elevation: 10,
-                      shadowColor: shadowColor,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10)
-                      ),
-                      child: Container(
-                        width: 105,
-                        height: 105,
-                        padding: EdgeInsets.all(0.0),
-                        decoration: BoxDecoration(image: DecorationImage(image: AssetImage("images/pizza.jpg",),fit: BoxFit.cover,), borderRadius: BorderRadius.circular(10)),
-                        child: Center(
-                          child: Container(
-                            margin: EdgeInsets.fromLTRB(0.8, 82.0, 0.8, 0.0),
-                            padding: EdgeInsets.all(2.0),
-                            decoration: BoxDecoration(
-                              color: a,
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                            child: Text(
-                              "Pizza",
-                              style: GoogleFonts.raleway(color: TextColor, fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                Row(
-                  children: [
-                    Card(
-                      elevation: 10,
-                      shadowColor: shadowColor,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10)
-                      ),
-                      child: Container(
-                        width: 105,
-                        height: 105,
-                        padding: EdgeInsets.all(0.0),
-                        decoration: BoxDecoration(image: DecorationImage(image: AssetImage("images/pizza.jpg",),fit: BoxFit.cover,), borderRadius: BorderRadius.circular(10)),
-                        child: Center(
-                          child: Container(
-                            margin: EdgeInsets.fromLTRB(0.8, 82.0, 0.8, 0.0),
-                            padding: EdgeInsets.all(2.0),
-                            decoration: BoxDecoration(
-                              color: a,
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                            child: Text(
-                              "Pizza",
-                              style: GoogleFonts.raleway(color: TextColor, fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Expanded(child: Text(''), flex: 2,),
-                    Card(
-                      elevation: 10,
-                      shadowColor: shadowColor,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10)
-                      ),
-                      child: Container(
-                        width: 105,
-                        height: 105,
-                        padding: EdgeInsets.all(0.0),
-                        decoration: BoxDecoration(image: DecorationImage(image: AssetImage("images/pizza.jpg",),fit: BoxFit.cover,), borderRadius: BorderRadius.circular(10)),
-                        child: Center(
-                          child: Container(
-                            margin: EdgeInsets.fromLTRB(0.8, 82.0, 0.8, 0.0),
-                            padding: EdgeInsets.all(2.0),
-                            decoration: BoxDecoration(
-                              color: a,
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                            child: Text(
-                              "Pizza",
-                              style: GoogleFonts.raleway(color: TextColor, fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Expanded(child: Text(''), flex: 2,),
-                    Card(
-                      elevation: 10,
-                      shadowColor: shadowColor,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10)
-                      ),
-                      child: Container(
-                        width: 105,
-                        height: 105,
-                        padding: EdgeInsets.all(0.0),
-                        decoration: BoxDecoration(image: DecorationImage(image: AssetImage("images/pizza.jpg",),fit: BoxFit.cover,), borderRadius: BorderRadius.circular(10)),
-                        child: Center(
-                          child: Container(
-                            margin: EdgeInsets.fromLTRB(0.8, 82.0, 0.8, 0.0),
-                            padding: EdgeInsets.all(2.0),
-                            decoration: BoxDecoration(
-                              color: a,
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                            child: Text(
-                              "Pizza",
-                              style: GoogleFonts.raleway(color: TextColor, fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                Row(
-                  children: [
-                    Card(
-                      elevation: 10,
-                      shadowColor: shadowColor,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10)
-                      ),
-                      child: Container(
-                        width: 105,
-                        height: 105,
-                        padding: EdgeInsets.all(0.0),
-                        decoration: BoxDecoration(image: DecorationImage(image: AssetImage("images/pizza.jpg",),fit: BoxFit.cover,), borderRadius: BorderRadius.circular(10)),
-                        child: Center(
-                          child: Container(
-                            margin: EdgeInsets.fromLTRB(0.8, 82.0, 0.8, 0.0),
-                            padding: EdgeInsets.all(2.0),
-                            decoration: BoxDecoration(
-                              color: a,
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                            child: Text(
-                              "Pizza",
-                              style: GoogleFonts.raleway(color: TextColor, fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Expanded(child: Text(''), flex: 2,),
-                    Card(
-                      elevation: 10,
-                      shadowColor: shadowColor,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10)
-                      ),
-                      child: Container(
-                        width: 105,
-                        height: 105,
-                        padding: EdgeInsets.all(0.0),
-                        decoration: BoxDecoration(image: DecorationImage(image: AssetImage("images/pizza.jpg",),fit: BoxFit.cover,), borderRadius: BorderRadius.circular(10)),
-                        child: Center(
-                          child: Container(
-                            margin: EdgeInsets.fromLTRB(0.8, 82.0, 0.8, 0.0),
-                            padding: EdgeInsets.all(2.0),
-                            decoration: BoxDecoration(
-                              color: a,
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                            child: Text(
-                              "Pizza",
-                              style: GoogleFonts.raleway(color: TextColor, fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Expanded(child: Text(''), flex: 2,),
-                    Card(
-                      elevation: 10,
-                      shadowColor: shadowColor,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10)
-                      ),
-                      child: Container(
-                        width: 105,
-                        height: 105,
-                        padding: EdgeInsets.all(0.0),
-                        decoration: BoxDecoration(image: DecorationImage(image: AssetImage("images/pizza.jpg",),fit: BoxFit.cover,), borderRadius: BorderRadius.circular(10)),
-                        child: Center(
-                          child: Container(
-                            margin: EdgeInsets.fromLTRB(0.8, 82.0, 0.8, 0.0),
-                            padding: EdgeInsets.all(2.0),
-                            decoration: BoxDecoration(
-                              color: a,
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                            child: Text(
-                              "Pizza",
-                              style: GoogleFonts.raleway(color: TextColor, fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ],
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.all(20.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    Name,
+                    style: GoogleFonts.raleway(
+                        color: Colors.black, fontWeight: FontWeight.bold),
+                  ),
+                  Divider(),
+                  Container(
+                    width: 200,
+                    child: Text(Description.substring(0, 25), style: GoogleFonts.robotoSerif(),),
+                  ),
+                ],
+              ),
             )
           ],
         ),
+      ),
+    );
+  }
+
+
+  display(){
+    if(Click == 'a') {
+      return StreamBuilder(
+          stream: FirebaseFirestore.instance.collection("Products").doc("salad").collection("Salad").snapshots(),
+          builder: (context, snapshot){
+            return snapshot.hasData && !snapshot.hasError ?
+            ListView.builder(
+              itemCount: snapshot.data!.docs.length,
+              shrinkWrap: true,
+              itemBuilder: (context, index){
+                DocumentSnapshot data = snapshot.data!.docs[index];
+                return Ui(data["Id"], "Salad", data["ImageUrl"], data["Name"], data["Price"], data["Description"]);
+              },
+            )
+                :
+            Center(child: CircularProgressIndicator(),);
+          }
       );
     }
-    if(Click == 'c'){
-      return Container(
-       padding: EdgeInsets.fromLTRB(10.0, 210.0, 10.0, 0.0),
-        child: GridView(
-          physics: BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics(),),
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3, mainAxisSpacing: 16),
-          children: [
-            Card(
-              elevation: 10,
-              shadowColor: shadowColor,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10)
-              ),
-              child: Container(
-                width: 105,
-                height: 105,
-                padding: EdgeInsets.all(0.0),
-                decoration: BoxDecoration(image: DecorationImage(image: AssetImage("images/pizza.jpg",),fit: BoxFit.cover,), borderRadius: BorderRadius.circular(10)),
-                child: Center(
-                  child: Container(
-                    margin: EdgeInsets.fromLTRB(0.8, 82.0, 0.8, 0.0),
-                    padding: EdgeInsets.all(2.0),
-                    decoration: BoxDecoration(
-                      color: a,
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                    child: Text(
-                      "Pizza",
-                      style: GoogleFonts.raleway(color: TextColor, fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            Card(
-              elevation: 10,
-              shadowColor: shadowColor,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10)
-              ),
-              child: Container(
-                width: 105,
-                height: 105,
-                padding: EdgeInsets.all(0.0),
-                decoration: BoxDecoration(image: DecorationImage(image: AssetImage("images/pizza.jpg",),fit: BoxFit.cover,), borderRadius: BorderRadius.circular(10)),
-                child: Center(
-                  child: Container(
-                    margin: EdgeInsets.fromLTRB(0.8, 82.0, 0.8, 0.0),
-                    padding: EdgeInsets.all(2.0),
-                    decoration: BoxDecoration(
-                      color: a,
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                    child: Text(
-                      "Pizza",
-                      style: GoogleFonts.raleway(color: TextColor, fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            Card(
-              elevation: 10,
-              shadowColor: shadowColor,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10)
-              ),
-              child: Container(
-                width: 105,
-                height: 105,
-                padding: EdgeInsets.all(0.0),
-                decoration: BoxDecoration(image: DecorationImage(image: AssetImage("images/pizza.jpg",),fit: BoxFit.cover,), borderRadius: BorderRadius.circular(10)),
-                child: Center(
-                  child: Container(
-                    margin: EdgeInsets.fromLTRB(0.8, 82.0, 0.8, 0.0),
-                    padding: EdgeInsets.all(2.0),
-                    decoration: BoxDecoration(
-                      color: a,
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                    child: Text(
-                      "Pizza",
-                      style: GoogleFonts.raleway(color: TextColor, fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            Card(
-              elevation: 10,
-              shadowColor: shadowColor,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10)
-              ),
-              child: Container(
-                width: 105,
-                height: 105,
-                padding: EdgeInsets.all(0.0),
-                decoration: BoxDecoration(image: DecorationImage(image: AssetImage("images/pizza.jpg",),fit: BoxFit.cover,), borderRadius: BorderRadius.circular(10)),
-                child: Center(
-                  child: Container(
-                    margin: EdgeInsets.fromLTRB(0.8, 82.0, 0.8, 0.0),
-                    padding: EdgeInsets.all(2.0),
-                    decoration: BoxDecoration(
-                      color: a,
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                    child: Text(
-                      "Pizza",
-                      style: GoogleFonts.raleway(color: TextColor, fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            Card(
-              elevation: 10,
-              shadowColor: shadowColor,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10)
-              ),
-              child: Container(
-                width: 105,
-                height: 105,
-                padding: EdgeInsets.all(0.0),
-                decoration: BoxDecoration(image: DecorationImage(image: AssetImage("images/pizza.jpg",),fit: BoxFit.cover,), borderRadius: BorderRadius.circular(10)),
-                child: Center(
-                  child: Container(
-                    margin: EdgeInsets.fromLTRB(0.8, 82.0, 0.8, 0.0),
-                    padding: EdgeInsets.all(2.0),
-                    decoration: BoxDecoration(
-                      color: a,
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                    child: Text(
-                      "Pizza",
-                      style: GoogleFonts.raleway(color: TextColor, fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            Card(
-              elevation: 10,
-              shadowColor: shadowColor,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10)
-              ),
-              child: Container(
-                width: 105,
-                height: 105,
-                padding: EdgeInsets.all(0.0),
-                decoration: BoxDecoration(image: DecorationImage(image: AssetImage("images/pizza.jpg",),fit: BoxFit.cover,), borderRadius: BorderRadius.circular(10)),
-                child: Center(
-                  child: Container(
-                    margin: EdgeInsets.fromLTRB(0.8, 82.0, 0.8, 0.0),
-                    padding: EdgeInsets.all(2.0),
-                    decoration: BoxDecoration(
-                      color: a,
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                    child: Text(
-                      "Pizza",
-                      style: GoogleFonts.raleway(color: TextColor, fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            Card(
-              elevation: 10,
-              shadowColor: shadowColor,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10)
-              ),
-              child: Container(
-                width: 105,
-                height: 105,
-                padding: EdgeInsets.all(0.0),
-                decoration: BoxDecoration(image: DecorationImage(image: AssetImage("images/pizza.jpg",),fit: BoxFit.cover,), borderRadius: BorderRadius.circular(10)),
-                child: Center(
-                  child: Container(
-                    margin: EdgeInsets.fromLTRB(0.8, 82.0, 0.8, 0.0),
-                    padding: EdgeInsets.all(2.0),
-                    decoration: BoxDecoration(
-                      color: a,
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                    child: Text(
-                      "Pizza",
-                      style: GoogleFonts.raleway(color: TextColor, fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            Card(
-              elevation: 10,
-              shadowColor: shadowColor,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10)
-              ),
-              child: Container(
-                width: 105,
-                height: 105,
-                padding: EdgeInsets.all(0.0),
-                decoration: BoxDecoration(image: DecorationImage(image: AssetImage("images/pizza.jpg",),fit: BoxFit.cover,), borderRadius: BorderRadius.circular(10)),
-                child: Center(
-                  child: Container(
-                    margin: EdgeInsets.fromLTRB(0.8, 82.0, 0.8, 0.0),
-                    padding: EdgeInsets.all(2.0),
-                    decoration: BoxDecoration(
-                      color: a,
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                    child: Text(
-                      "Pizza",
-                      style: GoogleFonts.raleway(color: TextColor, fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            Card(
-              elevation: 10,
-              shadowColor: shadowColor,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10)
-              ),
-              child: Container(
-                width: 105,
-                height: 105,
-                padding: EdgeInsets.all(0.0),
-                decoration: BoxDecoration(image: DecorationImage(image: AssetImage("images/pizza.jpg",),fit: BoxFit.cover,), borderRadius: BorderRadius.circular(10)),
-                child: Center(
-                  child: Container(
-                    margin: EdgeInsets.fromLTRB(0.8, 82.0, 0.8, 0.0),
-                    padding: EdgeInsets.all(2.0),
-                    decoration: BoxDecoration(
-                      color: a,
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                    child: Text(
-                      "Pizza",
-                      style: GoogleFonts.raleway(color: TextColor, fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            Card(
-              elevation: 10,
-              shadowColor: shadowColor,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10)
-              ),
-              child: Container(
-                width: 105,
-                height: 105,
-                padding: EdgeInsets.all(0.0),
-                decoration: BoxDecoration(image: DecorationImage(image: AssetImage("images/pizza.jpg",),fit: BoxFit.cover,), borderRadius: BorderRadius.circular(10)),
-                child: Center(
-                  child: Container(
-                    margin: EdgeInsets.fromLTRB(0.8, 82.0, 0.8, 0.0),
-                    padding: EdgeInsets.all(2.0),
-                    decoration: BoxDecoration(
-                      color: a,
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                    child: Text(
-                      "Pizza",
-                      style: GoogleFonts.raleway(color: TextColor, fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            Card(
-              elevation: 10,
-              shadowColor: shadowColor,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10)
-              ),
-              child: Container(
-                width: 105,
-                height: 105,
-                padding: EdgeInsets.all(0.0),
-                decoration: BoxDecoration(image: DecorationImage(image: AssetImage("images/pizza.jpg",),fit: BoxFit.cover,), borderRadius: BorderRadius.circular(10)),
-                child: Center(
-                  child: Container(
-                    margin: EdgeInsets.fromLTRB(0.8, 82.0, 0.8, 0.0),
-                    padding: EdgeInsets.all(2.0),
-                    decoration: BoxDecoration(
-                      color: a,
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                    child: Text(
-                      "Pizza",
-                      style: GoogleFonts.raleway(color: TextColor, fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            Card(
-              elevation: 10,
-              shadowColor: shadowColor,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10)
-              ),
-              child: Container(
-                width: 105,
-                height: 105,
-                padding: EdgeInsets.all(0.0),
-                decoration: BoxDecoration(image: DecorationImage(image: AssetImage("images/pizza.jpg",),fit: BoxFit.cover,), borderRadius: BorderRadius.circular(10)),
-                child: Center(
-                  child: Container(
-                    margin: EdgeInsets.fromLTRB(0.8, 82.0, 0.8, 0.0),
-                    padding: EdgeInsets.all(2.0),
-                    decoration: BoxDecoration(
-                      color: a,
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                    child: Text(
-                      "Pizza",
-                      style: GoogleFonts.raleway(color: TextColor, fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-              ],
-            ),
+    if(Click == 'b') {
+      return StreamBuilder(
+          stream: FirebaseFirestore.instance.collection("Products").doc("pizza").collection("Pizza").snapshots(),
+          builder: (context, snapshot){
+            return snapshot.hasData && !snapshot.hasError ?
+            ListView.builder(
+              itemCount: snapshot.data!.docs.length,
+              shrinkWrap: true,
+              itemBuilder: (context, index){
+                DocumentSnapshot data = snapshot.data!.docs[index];
+                return Ui(data["Id"], "Pizza", data["ImageUrl"], data["Name"], data["Price"], data["Description"]);
+              },
+            )
+                :
+            Center(child: CircularProgressIndicator(),);
+          }
+      );
+    }
+    if(Click == 'c') {
+      return StreamBuilder(
+          stream: FirebaseFirestore.instance.collection("Products").doc("mushroom").collection("Mushroom").snapshots(),
+          builder: (context, snapshot){
+            return snapshot.hasData && !snapshot.hasError ?
+            ListView.builder(
+              itemCount: snapshot.data!.docs.length,
+              shrinkWrap: true,
+              itemBuilder: (context, index){
+                DocumentSnapshot data = snapshot.data!.docs[index];
+                return Ui(data["Id"], "Mushroom", data["ImageUrl"], data["Name"], data["Price"], data["Description"]);
+              },
+            )
+                :
+            Center(child: CircularProgressIndicator(),);
+          }
       );
     }
   }
@@ -1886,9 +394,9 @@ class _UserHomeScreenState extends State<UserHomeScreen> {
             ],
            ),
           ),
-          Container(width: MediaQuery.of(context).size.width,margin: EdgeInsets.symmetric(vertical: 90.0),padding: EdgeInsets.all(2.0),child: Text("All Categories", style: GoogleFonts.nanumGothic(fontSize: 12, color: Colors.white),), decoration: BoxDecoration(borderRadius: BorderRadius.circular(0.0), color: Colors.black,),),
+          Container(margin: EdgeInsets.symmetric(vertical: 90.0),padding: EdgeInsets.all(2.0),child: Text("All Categories", style: GoogleFonts.nanumGothic(fontSize: 12, color: Colors.white),), decoration: BoxDecoration(borderRadius: BorderRadius.circular(10.0), color: Colors.black,),),
           Padding(
-            padding: const EdgeInsets.fromLTRB(0.0, 97.0, 0.0, 435.0),
+            padding: const EdgeInsets.fromLTRB(0.0, 104.0, 0.0, 435.0),
             child: ListView(
               physics: BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
               scrollDirection: Axis.horizontal,
@@ -1901,7 +409,6 @@ class _UserHomeScreenState extends State<UserHomeScreen> {
                     padding: EdgeInsets.all(10.0),
                     child: Column(
                       children: [
-                        Text(ClickedProductA),
                         CircleAvatar(
                           backgroundImage: AssetImage("images/salad.png"),
                           radius: 27.5,
@@ -1931,7 +438,6 @@ class _UserHomeScreenState extends State<UserHomeScreen> {
                     padding: EdgeInsets.all(10.0),
                     child: Column(
                       children: [
-                        Text(ClickedProductB),
                       CircleAvatar(
                         backgroundImage: AssetImage("images/pizza.jpg"),
                         radius: 27.5,
@@ -1961,7 +467,6 @@ class _UserHomeScreenState extends State<UserHomeScreen> {
                     padding: EdgeInsets.all(10.0),
                     child: Column(
                       children: [
-                        Text(ClickedProductC),
                         CircleAvatar(
                           backgroundImage: AssetImage("images/mushroom.png"),
                           radius: 27.5,
@@ -1990,7 +495,6 @@ class _UserHomeScreenState extends State<UserHomeScreen> {
                     padding: EdgeInsets.all(10.0),
                     child: Column(
                       children: [
-                        Text(ClickedProductD),
                         CircleAvatar(
                           backgroundImage: AssetImage("images/suya.jpg"),
                           radius: 27.5,
@@ -2019,7 +523,6 @@ class _UserHomeScreenState extends State<UserHomeScreen> {
                     padding: EdgeInsets.all(10.0),
                     child: Column(
                       children: [
-                        Text(ClickedProductE),
                         CircleAvatar(
                           backgroundImage: AssetImage("images/snail.png"),
                           radius: 27.5,
@@ -2043,7 +546,10 @@ class _UserHomeScreenState extends State<UserHomeScreen> {
               ],
             ),
           ),
-          display(),
+          Container(
+            margin: EdgeInsets.fromLTRB(2.0, 200.0, 2.0, 0.0),
+              child: display(),
+          ),
         ],
       ),
     );
