@@ -372,7 +372,6 @@ class _UserHomeScreenState extends State<UserHomeScreen> {
             margin: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 550),
           child: ImageSlideshow(
             width: MediaQuery.of(context).size.width,
-           // height: 200,
             initialPage: 0,
             indicatorColor: Colors.blue,
             indicatorBackgroundColor: Colors.grey,
